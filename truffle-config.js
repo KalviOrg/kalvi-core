@@ -81,10 +81,12 @@ module.exports = {
       gasPrice: 10000000000
     },
     matic: {
-      provider: () => new HDWalletProvider(process.env.MNENOMIC, 'https://rpc-mumbai.maticvigil.com'),
+      networkCheckTimeout: 10000,
+      provider: () => new HDWalletProvider(process.env.MNENOMIC, 'https://matic-mumbai.chainstacklabs.com/'),
+      pollingInterval: 30000,
       network_id: 80001,
       confirmations: 2,
-      timeoutBlocks: 200,
+      timeoutBlocks: 2000,
       skipDryRun: true
     },
     development: {
